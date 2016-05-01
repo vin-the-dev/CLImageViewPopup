@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CLImageViewPopup_Example', :exclusive => true do
+  pod 'CLImageViewPopup', :path => '../'
+end
+
+target 'CLImageViewPopup_Tests', :exclusive => true do
+  pod 'CLImageViewPopup', :path => '../'
+
+  
+end
