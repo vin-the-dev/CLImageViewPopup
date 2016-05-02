@@ -1,0 +1,16 @@
+PODS:
+  - CLImageViewPopup (0.1.0)
+
+DEPENDENCIES:
+  - CLImageViewPopup (from `../`)
+
+EXTERNAL SOURCES:
+  CLImageViewPopup:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CLImageViewPopup: 9d64f82c7b55e98f44338ccc32c2e3d76d1e80ea
+
+PODFILE CHECKSUM: 3b9447426a745b46adfbe445df80a37a9e5b3bf5
+
+COCOAPODS: 1.0.0.beta.8

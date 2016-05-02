@@ -1,0 +1,6 @@
+framework module CLImageViewPopup {
+  umbrella header "CLImageViewPopup-umbrella.h"
+
+  export *
+  module * { export * }
+}
