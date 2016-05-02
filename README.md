@@ -8,7 +8,9 @@
 ## Description
 
 A simple UIImageView for easy fullscreen image pop up. No matter where your UIImageView may be.
+Image pops up from where is was and goes back to its original position
 
+<img src="https://github.com/vinbhai4u/CLImageViewPopup/blob/master/CLImagePopUp.gif" alt="CLImageViewPopup" align="Center" />
 
 ## Example
 
