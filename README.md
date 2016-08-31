@@ -1,6 +1,6 @@
 # CLImageViewPopup
 
-[![CI Status](http://img.shields.io/travis/Vineeth Vijayan/CLImageViewPopup.svg?style=flat)](https://travis-ci.org/Vineeth Vijayan/CLImageViewPopup)
+[//]: # [![CI Status](http://img.shields.io/travis/Vineeth Vijayan/CLImageViewPopup.svg?style=flat)](https://travis-ci.org/Vineeth Vijayan/CLImageViewPopup)
 [![Version](https://img.shields.io/cocoapods/v/CLImageViewPopup.svg?style=flat)](http://cocoapods.org/pods/CLImageViewPopup)
 [![License](https://img.shields.io/cocoapods/l/CLImageViewPopup.svg?style=flat)](http://cocoapods.org/pods/CLImageViewPopup)
 [![Platform](https://img.shields.io/cocoapods/p/CLImageViewPopup.svg?style=flat)](http://cocoapods.org/pods/CLImageViewPopup)
