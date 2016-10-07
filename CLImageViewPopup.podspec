@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "CLImageViewPopup"
-  s.version          = "0.1.1"
+  s.version          = "0.2.0"
   s.summary          = "A simple Image View when tapped, pops up to full screen."
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ TODO: Add long description of the pod here. A simple Image View to be tapped to 
   s.license          = 'MIT'
   s.author           = { "Vineeth Vijayan" => "vinbhai4u@gmail.com" }
   s.source           = { :git => "https://github.com/vinbhai4u/CLImageViewPopup.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/vinbhai4u'
 
   s.ios.deployment_target = '8.0'
 
