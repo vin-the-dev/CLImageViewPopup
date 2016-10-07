@@ -15,8 +15,8 @@ class CLImageViewPopup: UIImageView {
     var animated: Bool = true
     var intDuration = 0.25
     //MARK: Life cycle
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
     }
     
     override init(frame: CGRect) {
@@ -27,7 +27,7 @@ class CLImageViewPopup: UIImageView {
         super.init(coder: aDecoder)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CLImageViewPopup.popUpImageToFullScreen))
         self.addGestureRecognizer(tapGesture)
-        self.userInteractionEnabled = true
+        self.isUserInteractionEnabled = true
         //        fatalError("init(coder:) has not been implemented")
     }
     
@@ -35,45 +35,45 @@ class CLImageViewPopup: UIImageView {
     func exitFullScreen () {
         let imageV = bgView.subviews[0] as! UIImageView
         
-        UIView.animateWithDuration(intDuration, animations: {
+        UIView.animate(withDuration: intDuration, animations: {
                 imageV.frame = self.tempRect!
                 self.bgView.alpha = 0
-            }) { (bol) in
+            }, completion: { (bol) in
                 self.bgView.removeFromSuperview()
-        }
+        }) 
     }
     
     func popUpImageToFullScreen() {
         
-        if let window = UIApplication.sharedApplication().delegate?.window {
+        if let window = UIApplication.shared.delegate?.window {
             let parentView = self.findParentViewController(self)!.view
             
-            bgView = UIView(frame: UIScreen.mainScreen().bounds)
+            bgView = UIView(frame: UIScreen.main.bounds)
             bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CLImageViewPopup.exitFullScreen)))
             bgView.alpha = 0
-            bgView.backgroundColor = UIColor.blackColor()
+            bgView.backgroundColor = UIColor.black
             let imageV = UIImageView(image: self.image)
-            let point = self.convertRect(self.bounds, toView: parentView)
+            let point = self.convert(self.bounds, to: parentView)
             imageV.frame = point
             tempRect = point
-            imageV.contentMode = .ScaleAspectFit
+            imageV.contentMode = .scaleAspectFit
             self.bgView.addSubview(imageV)
             window?.addSubview(bgView)
             
             if animated {
-                UIView.animateWithDuration(intDuration, animations: {
+                UIView.animate(withDuration: intDuration, animations: {
                     self.bgView.alpha = 1
-                    imageV.frame = CGRectMake(0, 0, (parentView?.frame.width)!, (parentView?.frame.width)!)
+                    imageV.frame = CGRect(x: 0, y: 0, width: (parentView?.frame.width)!, height: (parentView?.frame.width)!)
                     imageV.center = (parentView?.center)!
                 })
             }
         }
     }
     
-    func findParentViewController(view: UIView) -> UIViewController? {
+    func findParentViewController(_ view: UIView) -> UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
-            parentResponder = parentResponder!.nextResponder()
+            parentResponder = parentResponder!.next
             if let viewController = parentResponder as? UIViewController {
                 return viewController
             }
