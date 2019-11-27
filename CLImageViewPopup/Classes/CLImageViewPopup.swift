@@ -32,21 +32,21 @@ class CLImageViewPopup: UIImageView {
     }
     
     //MARK: Actions of Gestures
-    func exitFullScreen () {
+    @objc func exitFullScreen () {
         let imageV = bgView.subviews[0] as! UIImageView
         
         UIView.animate(withDuration: intDuration, animations: {
                 imageV.frame = self.tempRect!
                 self.bgView.alpha = 0
-            }, completion: { (bol) in
+            }) { (bol) in
                 self.bgView.removeFromSuperview()
-        }) 
+        }
     }
     
-    func popUpImageToFullScreen() {
+    @objc func popUpImageToFullScreen() {
         
         if let window = UIApplication.shared.delegate?.window {
-            let parentView = self.findParentViewController(self)!.view
+            let parentView = self.findParentViewController(view: self)!.view
             
             bgView = UIView(frame: UIScreen.main.bounds)
             bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(CLImageViewPopup.exitFullScreen)))
@@ -70,7 +70,7 @@ class CLImageViewPopup: UIImageView {
         }
     }
     
-    func findParentViewController(_ view: UIView) -> UIViewController? {
+    func findParentViewController(view: UIView) -> UIViewController? {
         var parentResponder: UIResponder? = self
         while parentResponder != nil {
             parentResponder = parentResponder!.next
